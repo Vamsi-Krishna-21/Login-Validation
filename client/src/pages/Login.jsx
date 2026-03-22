@@ -22,12 +22,10 @@ function Login() {
     try {
 
       const res = await axios.post(
-        "https://login-backend-kc4u.onrender.com/api/auth/login",
-        {
-          identifier,
-          password
-        }
-      );
+ "https://login-backend-kc4u.onrender.com/api/auth/login",
+ { emailOrUsername, password }
+);
+  
 
       localStorage.setItem("token", res.data.token);
 

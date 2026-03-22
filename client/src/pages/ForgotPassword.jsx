@@ -19,9 +19,9 @@ function ForgotPassword() {
     try {
 
       const res = await axios.post(
-        "https://login-backend-kc4u.onrender.com/api/auth/forgot-password",
-        { email }
-      );
+ "https://login-backend-kc4u.onrender.com/api/auth/forgot-password",
+ { email }
+);
 
       // show success message
       setMessage(res.data.message);

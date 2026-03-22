@@ -54,13 +54,8 @@ function Register() {
     try {
 
       await axios.post(
-  "https://login-backend-kc4u.onrender.com/api/auth/register",
-  {
-    name,
-    username,
-    email,
-    password
-  }
+ "https://login-backend-kc4u.onrender.com/api/auth/register",
+ { name, username, email, password }
 );
 
       setSuccess("Account created successfully");
