@@ -94,6 +94,13 @@ function Login() {
 
         <p
           className="text-center text-sm mt-4 text-blue-500 cursor-pointer"
+          onClick={()=>navigate("/register")}
+        >
+          SignUp
+        </p>
+
+        <p
+          className="text-center text-sm mt-4 text-red-500 cursor-pointer"
           onClick={()=>navigate("/forgot-password")}
         >
           Forgot password?
