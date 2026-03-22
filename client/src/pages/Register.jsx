@@ -54,7 +54,7 @@ function Register() {
     try {
 
       await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://login-backend-kc4u.onrender.com/api/auth/register",
         {
           name,
           username,

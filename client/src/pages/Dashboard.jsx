@@ -10,7 +10,7 @@ function Dashboard() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/dashboard",
+          "https://login-backend-kc4u.onrender.com/api/dashboard",
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
