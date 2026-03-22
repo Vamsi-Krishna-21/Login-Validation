@@ -38,7 +38,7 @@ function ResetPassword() {
     try {
 
       await axios.post(
-        "https://login-backend-kc4u.onrender.com/api/auth/reset-password",
+        "https://login-backend-kc4u.onrender.com/api/auth/reset-password/:token",
         {
           token,
           password
