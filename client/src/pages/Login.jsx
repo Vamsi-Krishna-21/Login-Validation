@@ -93,18 +93,18 @@ function Login() {
         </button>
 
         <p
-          className="text-center text-sm mt-4 text-blue-500 cursor-pointer"
-          onClick={()=>navigate("/register")}
-        >
-          SignUp
-        </p>
+ className="text-center text-sm mt-4 text-blue-500 cursor-pointer"
+ onClick={() => navigate("/register")}
+>
+ Create new account
+</p>
 
-        <p
-          className="text-center text-sm mt-4 text-red-500 cursor-pointer"
-          onClick={()=>navigate("/forgot-password")}
-        >
-          Forgot password?
-        </p>
+<p
+ className="text-center text-sm mt-2 text-blue-500 cursor-pointer"
+ onClick={() => navigate("/forgot-password")}
+>
+ Forgot password?
+</p>
 
       </div>
 
