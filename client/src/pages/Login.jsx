@@ -16,31 +16,46 @@ function Login() {
 
   const handleLogin = async () => {
 
-    setError("");
-    setLoading(true);
+  setError("");
+  setLoading(true);
 
-    try {
+  try {
 
-      const res = await axios.post(
- "https://login-backend-kc4u.onrender.com/api/auth/login",
- { emailOrUsername, password }
-);
-  
+    const res = await axios.post(
 
-      localStorage.setItem("token", res.data.token);
+      "https://login-backend-kc4u.onrender.com/api/auth/login",
 
-      navigate("/dashboard");
+      {
 
-    }
-    catch {
+        emailOrUsername: identifier,
 
-      setError("Invalid email/username or password");
+        password
 
-    }
+      }
 
-    setLoading(false);
+    );
 
-  };
+    localStorage.setItem("token", res.data.token);
+
+    navigate("/dashboard");
+
+  }
+
+  catch(err){
+
+    setError(
+
+      err.response?.data?.message ||
+
+      "Invalid email/username or password"
+
+    );
+
+  }
+
+  setLoading(false);
+
+};
 
   return (
 
