@@ -15,7 +15,6 @@ const sendEmail = require("../utils/sendEmail");
    REGISTER
 
 ========================= */
-
 exports.register = async (req, res) => {
 
   const { name, username, email, password } = req.body;
@@ -25,80 +24,43 @@ exports.register = async (req, res) => {
     if(!name || !username || !email || !password){
 
       return res.status(400).json({
-
         success:false,
-
         message:"All fields are required"
-
       });
 
     }
 
-
-
     const existingUser = await User.findOne({
-
       $or:[
-
         { email },
-
         { username }
-
       ]
-
     });
-
-
 
     if(existingUser){
 
       return res.status(400).json({
-
         success:false,
-
         message:"User already exists"
-
       });
 
     }
 
-
-
-    const salt = await bcrypt.genSalt(10);
-
-
-
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = new User({
-
       name,
-
       username,
-
       email,
-
       password: hashedPassword
-
     });
-
-
 
     await user.save();
 
-
-
     res.status(201).json({
-
       success:true,
-
       message:"User registered successfully"
-
     });
-
-
 
   }
 
@@ -106,14 +68,9 @@ exports.register = async (req, res) => {
 
     console.log(err);
 
-
-
     res.status(500).json({
-
       success:false,
-
       message:"Server error"
-
     });
 
   }
